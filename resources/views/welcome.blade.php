@@ -12,7 +12,7 @@
 
     <!--====== Favicon Icon ======-->
     <!-- href = {{URL::asset('/images/favicon.png')}} -->
-    <link rel="shortcut icon" href="{{ asset('/assets/images/logo.png')}}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('/assets/images/logo.svg')}}" type="image/png">
         
     <!--====== Magnific Popup CSS ======-->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
@@ -69,7 +69,7 @@
                     <nav class="navbar navbar-expand-lg">
                        
                         <a class="navbar-brand" href="#">
-                            <img src="assets/images/logo.svg" alt="Logo">
+                            <img src="assets/images/logo.svg" height="80" width="80" alt="qwerty">
                         </a>
                         
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo" aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
@@ -198,7 +198,7 @@
                 <div class="col-lg-6 col-md-10">
                     <div class="section-title text-center pb-10">
                         <h3 class="title">Наши Курсы</h3>
-                        <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+                        <p class="text">Study anytime anywhere</p>
                     </div> <!-- row -->
                 </div>
             </div> <!-- row -->
@@ -210,51 +210,51 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-7 col-sm-9">
-                    <div class="single-features mt-40">
+                    <div class="single-features mt-40 border border-secondary">
                         <div class="features-title-icon d-flex justify-content-between">
                             <h4 class="features-title">{{$course->name}}</h4>
                         </div>
                         <div class="features-content">
                             <p class="text">Пререквизиты: <b>{{ $course->level->name}}</b></p>
-                            <div class="p-2">
-                                <h6 class="py-2">Чему вы научитесь?</h6>
+                            <div class="px-2">
+                                <h6 class="text py-2">Чему вы научитесь?</h6>
                                 <ul style="list-style-type: disc">
                                     @foreach($course->advantages as $advantage)
-                                    <li>{{$advantage->name}}</li>
+                                    <li class="text">{{$advantage->name}}</li>
                                     @endforeach
                                 </ul>
                             </div>
                             <span id="more{{$it}}" style="display: none;">
-                                <div class="p-2">
-                                    <h6 class="py-2">Что получит студент после завершения курса?</h6>
+                                <div class="px-2">
+                                    <h6 class="text py-2">Что получит студент после завершения курса?</h6>
                                     <span id="dots{{$it}}">...</span>
                                     <ul style="list-style-type: disc">
                                         @foreach($course->graduationStaffs as $staff)
-                                        <li>{{$staff->name}}</li>
+                                        <li class="text">{{$staff->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
-                                <div class="p-2">
-                                    <h6 class="py-2">Курсы проводятся индивидуально или в группе?</h6>
+                                <div class="px-2">
+                                    <h6 class="text py-2">Курсы проводятся индивидуально или в группе?</h6>
                                     <ul style="list-style-type: disc">
                                         @foreach($course->courseTypes as $type)
-                                        <li>{{$type->name}}</li>
+                                        <li class="text">{{$type->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
-                                <div class="p-2">
-                                    <h6 class="py-2">Какие цены?</h6>
+                                <div class="px-2">
+                                    <h6 class="text py-2">Какие цены?</h6>
                                     <ul style="list-style-type: disc">
                                         @foreach($course->prices as $price)
-                                        <li>{{$price->name}}</li>
+                                        <li class="text">{{$price->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
-                                <div class="p-2">
+                                <div class="px-2">
                                     <h6 class="py-2">Сколько часов в месяц?</h6>
                                     <ul style="list-style-type: disc">
                                         @foreach($course->classRates as $rate)
-                                        <li>{{$rate->name}}</li>
+                                        <li class="text">{{$rate->name}}</li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -281,7 +281,7 @@
                 <div class="col-lg-10 col-md-10">
                     <div class="section-title text-center pb-25">
                         <h3 class="title">Специальные предложения</h3>
-                        <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+                        <p class="text">Study anytime anywhere</p>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -473,7 +473,7 @@
                 <div class="col-lg-6 col-md-10">
                     <div class="section-title text-center pb-30">
                         <h3 class="title">Встречайте команду</h3>
-                        <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+                        <p class="text">Study anytime anywhere</p>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -681,7 +681,7 @@
                                         <label>Номер телефона</label>
                                         <div class="input-items default">
                                             <input type="phone" name="phone" placeholder="Номер телефона">
-                                            <i class="lni lni-envelope"></i>
+                                            <i class="lni lni-phone"></i>
                                         </div>
                                     </div> <!-- form input -->
                                 </div>
@@ -715,7 +715,7 @@
                         <span class="mail">kuatbek.kazhytai@nu.edu.kz</span>
                     </div>
                     <div class="copyright text-center mt-35">
-                        <p class="text">Designed by <a href="https://uideck.com" rel="nofollow">Kuatbek</a> and Built-with <a rel="nofollow" href="https://ayroui.com">Alem 01</a> </p>
+                        <p class="text">Designed by <a href="https://www.linkedin.com/in/kuatbek-kazhytai-527b86151/" rel="nofollow">Kuatbek</a>Наши курс</p>
                     </div> <!--  copyright -->
                 </div>
             </div> <!-- row -->
