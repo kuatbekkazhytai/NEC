@@ -296,9 +296,22 @@
                             <p class="month"><span class="price">48 000 тг</span>/12 часов</p>
                         </div>
                         <div class="pricing-list">
+                            <div style="display:none;">
+                                {{$it = 1}}
+                            </div>  
                             <ul>
                                 <li class="text-center"><i class="lni lni-check-mark-circle"></i>Расширенный словарный запас</li>
-                                <li class="text-center"><i class="lni lni-check-mark-circle"></i>Грамматика</li>
+                                <li class="text-center"><i class="lni lni-check-mark-circle"></i>Навыки разговорного английского</li>
+                                <span id="specialOffer{{$it}}" style="display: none;">
+                                    <span id="offerDots{{$it}}">...</span>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Грамматика</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Навыки чтения</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Навыки восприятия на слух</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Сертификат о завершении курса</li>
+                                    </span>
+                                <div class="text-center">
+                                    <button class="specical-offer-btn my-2" onclick="showSpecialOffer({{$it}})" id="specialOfferBtn{{$it}}">Подробнее</button>
+                                </div>
                             </ul>
                         </div>
                         <div class="pricing-btn rounded-buttons text-center">
@@ -316,14 +329,30 @@
                             <h5 class="sub-title">Продвинутый</h5>
                             <p class="month"><span class="price">72 000 тг</span>/24 часов</p>
                         </div>
+                        <!-- <li class="text-center"><i class="lni lni-check-mark-circle"></i>Сертификат о завершении</li>
+                                <li class="text-center"><i class="lni lni-check-mark-circle"></i>Подарок для лучших учеников</li> -->
                         <div class="pricing-list">
+                            <div style="display:none;">
+                                {{$it = 2}}
+                            </div>  
                             <ul>
                                 <li class="text-center"><i class="lni lni-check-mark-circle"></i>Сертификат о завершении</li>
                                 <li class="text-center"><i class="lni lni-check-mark-circle"></i>Подарок для лучших учеников</li>
+                                <span id="specialOffer{{$it}}" style="display: none;">
+                                    <span id="offerDots{{$it}}">...</span>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Расширенный словарный запас</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Навыки разговорного английского</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Навыки чтения</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Грамматика</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Навыки восприятия на слух</li>
+                                </span>
+                                <div class="text-center">
+                                    <button class="specical-offer-btn my-2" onclick="showSpecialOffer({{$it}})" id="specialOfferBtn{{$it}}">Подробнее</button>
+                                </div>
                             </ul>
                         </div>
                         <div class="pricing-btn rounded-buttons text-center">
-                        <button button type="button" class="main-btn rounded-one" data-toggle="modal" data-target="#exampleModal" data-whatever="basic">ЗАПИСАТЬСЯ</button>
+                            <button button type="button" class="main-btn rounded-one" data-toggle="modal" data-target="#exampleModal" data-whatever="basic">ЗАПИСАТЬСЯ</button>
                         </div>
                     </div> <!-- pricing style one -->
                 </div>
@@ -337,14 +366,34 @@
                             <h5 class="sub-title">Про</h5>
                             <p class="month"><span class="price">96 000 тг</span>/48 часов</p>
                         </div>
+                    
                         <div class="pricing-list">
+                            <div style="display:none;">
+                                {{$it = 3}}
+                            </div>  
                             <ul>
                                 <li class="text-center"><i class="lni lni-check-mark-circle"></i>Методики обучения</li>
-                                <li class="text-center"><i class="lni lni-check-mark-circle"></i>Словарь делового английского</li>
+                                <li class="text-center"><i class="lni lni-check-mark-circle"></i>Деловой английский</li>
+                                <span id="specialOffer{{$it}}" style="display: none;">
+                                    <span id="offerDots{{$it}}">...</span>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>В конце первого месяца студенты узнают, как управлять своей речью, говоря на английском языке.</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Студент улучшит навыки чтения</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Расширенный словарный запас</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Грамматика</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Навыки восприятия на слух</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>50 наиболее часто используемых идиом на рабочем месте</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Навыки написания писем</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Эффективные разговорные навыки</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Сертификат о завершении</li>
+                                    <li class="text-center"><i class="lni lni-check-mark-circle"></i>Бонус</li>
+                                </span>
+                                <div class="text-center">
+                                    <button class="specical-offer-btn mt-2" onclick="showSpecialOffer({{$it}})" id="specialOfferBtn{{$it}}">Подробнее</button>
+                                </div>
                             </ul>
                         </div>
                         <div class="pricing-btn rounded-buttons text-center">
-                        <button button type="button" class="main-btn rounded-one" data-toggle="modal" data-target="#exampleModal" data-whatever="basic">ЗАПИСАТЬСЯ</button>
+                            <button button type="button" class="main-btn rounded-one" data-toggle="modal" data-target="#exampleModal" data-whatever="basic">ЗАПИСАТЬСЯ</button>
                         </div>
                     </div> <!-- pricing style one -->
                 </div>
@@ -387,85 +436,6 @@
 
     <!--====== PRINICNG ENDS ======-->
     
-    <!--====== ABOUT PART START ======-->
-
-    <!-- <section id="about" class="about-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="faq-content mt-45">
-                        <div class="about-title">
-                            <h6 class="sub-title">A Little More About Us</h6>
-                            <h4 class="title">Frequently Asked Questions <br> About Our Site</h4>
-                        </div>
-                        <div class="about-accordion">
-                            <div class="accordion" id="accordionExample">
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                        <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Frequently Asked Question One</a>
-                                    </div>
-
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
-                                        </div>
-                                    </div> 
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Frequently Asked Question Two</a>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Frequently Asked Question Three</a>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingFore">
-                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFore" aria-expanded="false" aria-controls="collapseFore">Frequently Asked Question Four</a>
-                                    </div>
-                                    <div id="collapseFore" class="collapse" aria-labelledby="headingFore" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingFive">
-                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Frequently Asked Question Five</a>
-                                    </div>
-                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="about-image mt-50">
-                        <img src="assets/images/about.jpg" alt="about">
-                    </div>
-                </div>
-            </div>
-        </div> 
-    </section> -->
-
-    <!--====== ABOUT PART ENDS ======-->
-    
     <!--====== TESTIMONIAL PART START ======-->
     <section id="team" class="team-area pt-120 pb-30">
         <div class="container">
@@ -504,25 +474,7 @@
                     
                 </div>
                 @endforeach
-                <!-- <div class="col-lg-4 col-sm-6">
-                    <div class="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
-                        <div class="team-image">
-                            <img src="assets/images/team-3.jpg" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <div class="team-social">
-                                <ul class="social">
-                                    <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
-                                    <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-                                    <li><a href="#"><i class="lni lni-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                            <h4 class="team-name"><a href="#">Mark A. Parker</a></h4>
-                            <span class="sub-title">UX Designer</span>
-                        </div>
-                    </div> <single team -->
-                <!-- </div>  -->
+
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
@@ -703,7 +655,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="footer-logo text-center">
-                        <a class="mt-30" href="{{ route('home')}}"><img src="assets/images/logo.svg" alt="Logo"></a>
+                        <a class="mt-30" href="{{ route('home')}}"><img src="assets/images/logo.svg" height="120" width="120" alt="Logo"></a>
                     </div> <!-- footer logo -->
                     <ul class="social text-center mt-60">
                         <li><a href="https://facebook.com/uideckHQ"><i class="lni lni-facebook-filled"></i></a></li>
@@ -803,6 +755,23 @@
         var dots = document.getElementById("pDots".concat(it));
         var moreText = document.getElementById("moreP".concat(it));
         var btnText = document.getElementById("pBtn".concat(it));
+        console.log(dots);
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Подробнее";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Вернуть";
+            moreText.style.display = "inline";
+        }
+    }
+
+    function showSpecialOffer(it) {
+        
+        var dots = document.getElementById("offerDots".concat(it));
+        var moreText = document.getElementById("specialOffer".concat(it));
+        var btnText = document.getElementById("specialOfferBtn".concat(it));
         console.log(dots);
         if (dots.style.display === "none") {
             dots.style.display = "inline";

@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('teacher/store', 'TeacherController@store')->name('teacher.store');
     Route::get('teacher/{teacher}', 'TeacherController@view')->name('teacher.view');
     Route::get('teacher/edit/{teacher}', 'TeacherController@edit')->name('teacher.edit');
+    Route::put('teacher/update/{teacher}', 'TeacherController@update')->name('teacher.update');
     Route::delete('teacher/delete/{teacher}', 'TeacherController@delete')->name('teacher.delete');
 
     Route::get('course', 'CourseController@index')->name('course.index');
