@@ -66,7 +66,7 @@ class TeacherController extends Controller
         $teacher->country = $records['country'];
         $teacher->avatar_path = $path;
         $teacher->update();
-        return Redirect::back()->with('status', 'Teacher was successfully updated!');
+        return Redirect::route('teacher.index')->with('status', 'Teacher info was successfully updated!');
     }
 
     public function view(Teacher $teacher) 

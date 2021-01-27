@@ -12,7 +12,7 @@
 
     <!--====== Favicon Icon ======-->
     <!-- href = {{URL::asset('/images/favicon.png')}} -->
-    <link rel="shortcut icon" href="{{ asset('/assets/images/logo.svg')}}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('/assets/images/logo-new.svg')}}" type="image/png">
         
     <!--====== Magnific Popup CSS ======-->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
@@ -67,10 +67,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg">
-                       
-                        <a class="navbar-brand" href="#">
-                            <img src="assets/images/logo.svg" height="80" width="80" alt="qwerty">
-                        </a>
                         
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo" aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="toggler-icon"></span>
@@ -82,7 +78,7 @@
                             <ul class="navbar-nav m-auto">
                                 <li class="nav-item active"><a class="page-scroll" href="#home">Домашняя страница</a></li>
                                 <li class="nav-item"><a class="page-scroll" href="#services">Курсы</a></li>
-                                <li class="nav-item"><a class="page-scroll" href="#pricing">Цены</a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#pricing">Специальные предложения</a></li>
                                 <li class="nav-item"><a class="page-scroll" href="#team">Команда</a></li>
                                 <li class="nav-item"><a class="page-scroll" href="#contact">Контакты</a></li>
                             </ul>
@@ -117,20 +113,20 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="slider-content">
-                                    <h1 class="title">Business is Now Digital</h1>
-                                    <p class="text">We blend insights and strategy to create digital products for forward-thinking organisations.</p>
-                                    <ul class="slider-btn rounded-buttons">
+                                    <h1 class="title text-center">Про нас</h1>
+                                    <p class="text">Мы помогаем бесчисленным студентам приобрести базовые навыки, разработать новые методы и уверенно двигаться вперед в своем учебном путешествии. Мы предлагаем широкий спектр курсов английского языка для поддержки студентов из всех слоев общества и уровней.</p>
+                                    <!-- <ul class="slider-btn rounded-buttons">
                                         <li><a class="main-btn rounded-one" href="#">GET STARTED</a></li>
                                         <li><a class="main-btn rounded-two" href="#">DOWNLOAD</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
                         </div> <!-- row -->
                     </div> <!-- container -->
                     <div class="slider-image-box d-none d-lg-flex align-items-end">
                         <div class="slider-image">
-                            <img src="assets/images/slider/1.png" alt="Hero">
-                        </div> <!-- slider-imgae -->
+                            <img src="assets/images/slider/2.png" alt="Hero"> 
+                        </div> <!-- slider-imgae 1.png was upper -->
                     </div> <!-- slider-imgae box -->
                 </div> <!-- carousel-item -->
 
@@ -139,34 +135,12 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="slider-content">
-                                    <h1 class="title">Crafted for Business</h1>
+                                    <h1 class="title text-center">Почему мы?</h1>
                                     <p class="text">We blend insights and strategy to create digital products for forward-thinking organisations.</p>
-                                    <ul class="slider-btn rounded-buttons">
+                                    <!-- <ul class="slider-btn rounded-buttons">
                                         <li><a class="main-btn rounded-one" href="#">GET STARTED</a></li>
                                         <li><a class="main-btn rounded-two" href="#">DOWNLOAD</a></li>
-                                    </ul>
-                                </div> <!-- slider-content -->
-                            </div>
-                        </div> <!-- row -->
-                    </div> <!-- container -->
-                    <div class="slider-image-box d-none d-lg-flex align-items-end">
-                        <div class="slider-image">
-                            <img src="assets/images/slider/2.png" alt="Hero">
-                        </div> <!-- slider-imgae -->
-                    </div> <!-- slider-imgae box -->
-                </div> <!-- carousel-item -->
-
-                <div class="carousel-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="slider-content">
-                                    <h1 class="title">Based on Bootstrap 4</h1>
-                                    <p class="text">We blend insights and strategy to create digital products for forward-thinking organisations.</p>
-                                    <ul class="slider-btn rounded-buttons">
-                                        <li><a class="main-btn rounded-one" href="#">GET STARTED</a></li>
-                                        <li><a class="main-btn rounded-two" href="#">DOWNLOAD</a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div> <!-- slider-content -->
                             </div>
                         </div> <!-- row -->
@@ -174,6 +148,19 @@
                     <div class="slider-image-box d-none d-lg-flex align-items-end">
                         <div class="slider-image">
                             <img src="assets/images/slider/3.png" alt="Hero">
+                        </div> <!-- slider-imgae -->
+                    </div> <!-- slider-imgae box -->
+                </div> <!-- carousel-item -->
+
+                <div class="carousel-item">
+                    <div>
+                        <div class="slider-image mt-50 ml-40 mb-50 pt-20 pb-20 pl-40">
+                            <img src="assets/images/slider/ttt.png" alt="Hero"  height="500" width="500">
+                        </div> <!-- slider-imgae -->
+                    </div>
+                    <div class="slider-image-box d-none d-lg-flex align-items-end">
+                        <div class="slider-image">
+                            <img src="assets/images/slider/1.png" alt="Hero">
                         </div> <!-- slider-imgae -->
                     </div> <!-- slider-imgae box -->
                 </div> <!-- carousel-item -->
@@ -189,7 +176,56 @@
     </section>
 
     <!--====== SLIDER PART ENDS ======-->
-    
+    <section id="contact" class="contact-area" style="padding-top: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-wrapper form-style-two pt-115">
+                        <h4 class="contact-title pb-10"><i class="lni lni-envelope"></i> Перывй шаг -<span>пробное занятие</span></h4>
+                        
+                        <form action="{{route('application.save-request')}}" method="POST">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-input mt-25">
+                                        <label>Имя</label>
+                                        <div class="input-items default">
+                                            <input name="name" type="text" placeholder="Имя">
+                                            <i class="lni lni-user"></i>
+                                        </div>
+                                    </div> <!-- form input -->
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-input mt-25">
+                                        <label>Почтовый адрес</label>
+                                        <div class="input-items default">
+                                            <input type="email" name="email" placeholder="Почтовый адрес">
+                                            <i class="lni lni-envelope"></i>
+                                        </div>
+                                    </div> <!-- form input -->
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-input mt-25">
+                                        <label>Номер телефона</label>
+                                        <div class="input-items default">
+                                            <input type="phone" name="phone" placeholder="Номер телефона">
+                                            <i class="lni lni-phone"></i>
+                                        </div>
+                                    </div> <!-- form input -->
+                                </div>
+                                <p class="form-message"></p>
+                                <div class="col-md-12">
+                                    <div class="form-input light-rounded-buttons mt-30">
+                                        <button type="submit" class="main-btn light-rounded-two">Отправить запрос</button>
+                                    </div> <!-- form input -->
+                                </div>
+                            </div> <!-- row -->
+                        </form>
+                    </div> <!-- contact wrapper form -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
     <!--====== FEATRES TWO PART START ======-->
 
     <section id="services" class="features-area" style="padding-bottom: 20px;">
@@ -657,7 +693,7 @@
                     <div class="footer-logo text-center">
                         <a class="mt-30" href="{{ route('home')}}"><img src="assets/images/logo.svg" height="120" width="120" alt="Logo"></a>
                     </div> <!-- footer logo -->
-                    <ul class="social text-center mt-60">
+                    <ul class="social text-center">
                         <li><a href="https://facebook.com/uideckHQ"><i class="lni lni-facebook-filled"></i></a></li>
                         <li><a href="https://www.instagram.com/nec_edu/?igshid=1luvh6bx04a5p"><i class="lni lni-instagram-original"></i></a></li>
                         <li><a href="https://www.linkedin.com/company/nec-edu"><i class="lni lni-linkedin-original"></i></a></li>

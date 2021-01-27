@@ -10,6 +10,7 @@ use App\ClassRate;
 use App\CourseType;
 use App\GraduationStaff;
 use App\Price;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
@@ -31,7 +32,6 @@ class CourseController extends Controller
     public function store(Request $request) 
     {
         $records = array_slice($request->all(), 1);
-        // dd($records);
         $validator = Validator::make( $records,[
             'courseName' => ['required', 'string', 'max:255'],
             'advantage' => ['required', 'string', 'max:255'],
@@ -40,19 +40,47 @@ class CourseController extends Controller
             'price' => ['required', 'string', 'max:255'],
             'duration' => ['required', 'string', 'max:255'],
         ]);
-        $course = Course::create([
-            'name' => $records['courseName'],
-            'level_id' => $records['level']
-        ]);
-        
-        $this->insertAdvantages($request->all(), $course->id);
-        $this->insertClassRates($request->all(),$course->id);
-        $this->insertCourseTypes($request->all(), $course->id);
-        $this->insertGraduationStaff($request->all(), $course->id);
-        $this->insertPrices($request->all(), $course->id);
-        
 
+        DB::transaction(function () use($records, $request) {
+            $course = Course::create([
+                'name' => $records['courseName'],
+                'level_id' => $records['level']
+            ]);
+
+            $this->insertAdvantages($request->all(), $course->id);
+            $this->insertClassRates($request->all(),$course->id);
+            $this->insertCourseTypes($request->all(), $course->id);
+            $this->insertGraduationStaff($request->all(), $course->id);
+            $this->insertPrices($request->all(), $course->id);
+        });
+        
         return Redirect::route('course.index')->with('status', 'Course was successfully inserted!');
+    }
+
+    public function edit(Course $course) 
+    {
+        $levels = Level::all()->whereNotIn('id', [$course->level->id]);
+        return view('course.edit', compact('course', 'levels'));
+    }
+
+    public function update(Course $course, Request $request) 
+    {
+        $records = array_slice($request->all(), 2);
+        $validator = Validator::make( $records,[
+            'courseName' => ['required', 'string', 'max:255'],
+        ]);
+
+        DB::transaction(function () use($records, $request, $course) {
+            $course->name = $records['courseName'];
+            $course->level_id = $records['level'];
+            $course->update();
+            $this->updateAdvantages($records, $course);
+            $this->updateClassRates($request->all(),$course);
+            $this->updateCourseTypes($request->all(), $course);
+            $this->updateGraduationStaff($request->all(), $course);
+            $this->updatePrices($request->all(), $course);
+        });
+        return Redirect::route('course.index')->with('status', 'Course was successfully updated!');
     }
 
     public function view(Course $course) 
@@ -87,6 +115,7 @@ class CourseController extends Controller
             }
         }
     }
+
 
     private function insertClassRates($array, $courseId) 
     {
@@ -150,6 +179,108 @@ class CourseController extends Controller
                 Price::create([
                     'name' => $price,
                     'course_id' => $courseId,
+                ]);
+            }
+        }
+    }
+
+    private function updateAdvantages($array, $course) 
+    {   
+        $reversed = array_reverse($array["advantages"]);
+        foreach($course->advantages as $advantage) {
+            if($reversed) {
+                $advantage->name = array_pop($reversed);
+                $advantage->update();
+            } else {
+                $advantage->delete();
+            }
+        }
+        if (sizeof($reversed) !== Null) {
+            foreach($reversed as $item) {
+                Advantage::create([
+                    'name' => $item,
+                    'course_id' => $course->id,
+                ]);
+            }
+        }
+    }
+    private function updateClassRates($array, $course) 
+    {   
+        $reversed = array_reverse($array["durations"]);
+        foreach($course->classRates as $rate) {
+            if($reversed) {
+                $rate->name = array_pop($reversed);
+                $rate->update();
+            } else {
+                $rate->delete();
+            }     
+        }
+        if (sizeof($reversed) !== Null) {
+            foreach($reversed as $item) {
+                ClassRate::create([
+                    'name' => $item,
+                    'course_id' => $course->id,
+                ]);
+            }
+        }
+    }
+    private function updateCourseTypes($array, $course) 
+    {   
+        $reversed = array_reverse($array["courseTypes"]);
+        foreach($course->courseTypes as $type) {
+            if($reversed) {
+                $type->name = array_pop($reversed);
+                $type->update();
+            } else {
+                $type->delete();
+            }
+            
+        }
+        if (sizeof($reversed) !== Null) {
+            foreach($reversed as $item) {
+                CourseType::create([
+                    'name' => $item,
+                    'course_id' => $course->id,
+                ]);
+            }
+        }
+    }
+    private function updateGraduationStaff($array, $course) 
+    {   
+        $reversed = array_reverse($array["outputs"]);
+        foreach($course->graduationStaffs as $staff) {
+            if($reversed) {
+                $staff->name = array_pop($reversed);
+                $staff->update();
+            } else {
+                $staff->delete();
+            }
+        }
+        if (sizeof($reversed) !== Null) {
+            foreach($reversed as $item) {
+                GraduationStaff::create([
+                    'name' => $item,
+                    'course_id' => $course->id,
+                ]);
+            }
+        }
+    }
+    private function updatePrices($array, $course) 
+    {   
+        $reversed = array_reverse($array["prices"]);
+        foreach($course->prices as $price) {
+            if($reversed) {
+                $price->name = array_pop($reversed);
+                $price->update();
+            } else {
+                $price->delete();
+            }
+        }
+        if (sizeof($reversed) !== Null) {
+            foreach($reversed as $item) {
+                Price::create([
+                    'name' => $item,
+                    'course_id' => $course->id,
                 ]);
             }
         }

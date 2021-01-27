@@ -108,6 +108,7 @@ p {
 .section-title .title {
   font-size: 44px;
   font-weight: 600;
+  padding: 50px;
   color: #121212;
   line-height: 55px; }
   @media (max-width: 767px) {
@@ -2443,7 +2444,8 @@ p {
     color: #fff;
     font-size: 16px;
     line-height: 24px;
-    margin-top: 16px; }
+    margin-top: 16px;
+    margin-left: 36px; }
   .slider-content .slider-btn {
     padding-top: 16px; }
     .slider-content .slider-btn li {
@@ -3172,8 +3174,8 @@ p.form-message.success, p.form-message.error {
 /*===== FOOTER FIVE =====*/
 .footer-area {
   background-color: #f4f6f7;
-  padding-top: 90px;
-  padding-bottom: 120px; }
+  padding-top: 30px;
+  padding-bottom: 40px; }
   .footer-area .social li {
     display: inline-block;
     margin: 0 5px; }
