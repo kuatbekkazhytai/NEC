@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -31,7 +32,7 @@ class HomeController extends Controller
     public function welcome()
     {
         $courses = Course::all();
-        $teachers = Teacher::all();
+        $teachers = DB::table('teachers')->simplePaginate(3);
         return view('welcome', compact('courses','teachers'));
     }
 }

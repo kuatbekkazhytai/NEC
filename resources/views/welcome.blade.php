@@ -251,7 +251,8 @@
                             <h4 class="features-title">{{$course->name}}</h4>
                         </div>
                         <div class="features-content">
-                            <p class="text">Пререквизиты: <b>{{ $course->level->name}}</b></p>
+                            <p class="text">Необходимый уровень: <b>{{ $course->level->name}}</b></p>
+                            <span id="more{{$it}}" style="display: none;">
                             <div class="px-2">
                                 <h6 class="text py-2">Чему вы научитесь?</h6>
                                 <ul style="list-style-type: disc">
@@ -260,7 +261,7 @@
                                     @endforeach
                                 </ul>
                             </div>
-                            <span id="more{{$it}}" style="display: none;">
+                            
                                 <div class="px-2">
                                     <h6 class="text py-2">Что получит студент после завершения курса?</h6>
                                     <span id="dots{{$it}}">...</span>
@@ -512,6 +513,10 @@
                 @endforeach
 
             </div> <!-- row -->
+            <div class="text-center">
+            {{ $teachers->links() }}
+            </div>
+            
         </div> <!-- container -->
     </section>
     <section id="testimonial" class="testimonial-area" style="padding-bottom: 20px;">
@@ -519,15 +524,12 @@
             <div class="row justify-content-between">
                 <div class="col-xl-5 col-lg-6">
                     <div class="testimonial-left-content mt-45">
-                        <h6 class="sub-title">Testimonials</h6>
-                        <h4 class="title">What Clients Says <br> About Us</h4>
-                        <ul class="testimonial-line">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                        <p class="text">Duis et metus et massa tempus lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ultricies, orci molestie blandit interdum. <br> <br> ipsum ante pellentesque nisl, eget mollis turpis quam nec eros. ultricies, orci molestie blandit interdum.</p>
+                        <h4 class="title">Отзывы наших студентов</h4>
+                        <div class="px-auto">
+                            <video width="450" height="300" controls>
+                                <source src="/assets/images/videos/1F.mp4" type=video/mp4>
+                            </video>
+                        </div>
                     </div> <!-- testimonial left content -->
                 </div>
                 <div class="col-lg-6">
@@ -538,16 +540,15 @@
                         <div class="testimonial-content-wrapper testimonial-active">
                             <div class="single-testimonial">
                                 <div class="testimonial-text">
-                                    <p class="text">“Praesent scelerisque, odio eu fermentum malesuada, nisi arcu volutpat nisl, sit amet convallis nunc turp.”</p>
+                                    <p class="text">“Nice content, everything is explained in a simple way, looking forward for next lesson!”</p>
                                 </div>
                                 <div class="testimonial-author d-sm-flex justify-content-between">
                                     <div class="author-info d-flex align-items-center">
-                                        <div class="author-image">
+                                        <!-- <div class="author-image">
                                             <img src="assets/images/author-1.jpg" alt="author">
-                                        </div>
+                                        </div> -->
                                         <div class="author-name media-body">
-                                            <h5 class="name">Mr. Jems Bond</h5>
-                                            <span class="sub-title">CEO Mbuild Firm</span>
+                                            <h5 class="name">Дарья Ворончихина</h5>
                                         </div>
                                     </div>
                                     <div class="author-review">
@@ -558,22 +559,19 @@
                                             <li><i class="lni lni-star-filled"></i></li>
                                             <li><i class="lni lni-star-filled"></i></li>
                                         </ul>
-                                        <span class="review">( 7 Reviews )</span>
+                                        <!-- <span class="review">( 7 Reviews )</span> -->
                                     </div>
                                 </div>
                             </div> <!-- single testimonial -->
                             <div class="single-testimonial">
                                 <div class="testimonial-text">
-                                    <p class="text">“Praesent scelerisque, odio eu fermentum malesuada, nisi arcu volutpat nisl, sit amet convallis nunc turp.”</p>
+                                    <p class="text">“Понравилось качество записи, доступная информация, много узнала для себя!”</p>
                                 </div>
                                 <div class="testimonial-author d-sm-flex justify-content-between">
                                     <div class="author-info d-flex align-items-center">
-                                        <div class="author-image">
-                                                <img src="assets/images/author-2.jpg" alt="author">
-                                        </div>
+                                        
                                         <div class="author-name media-body">
-                                            <h5 class="name">Mr. Jems Bond</h5>
-                                            <span class="sub-title">CEO Mbuild Firm</span>
+                                            <h5 class="name">Айман Айсина</h5>
                                         </div>
                                     </div>
                                     <div class="author-review">
@@ -584,22 +582,18 @@
                                             <li><i class="lni lni-star-filled"></i></li>
                                             <li><i class="lni lni-star-filled"></i></li>
                                         </ul>
-                                        <span class="review">( 7 Reviews )</span>
                                     </div>
                                 </div>
                             </div> <!-- single testimonial -->
                             <div class="single-testimonial">
                                 <div class="testimonial-text">
-                                    <p class="text">“Praesent scelerisque, odio eu fermentum malesuada, nisi arcu volutpat nisl, sit amet convallis nunc turp.”</p>
+                                    <p class="text">“Всем привет! Курс, в общем-то, понравился. Грамотно построена и структуирована программа. Преподаватель хорошо говорит на английском.”</p>
                                 </div>
                                 <div class="testimonial-author d-sm-flex justify-content-between">
                                     <div class="author-info d-flex align-items-center">
-                                        <div class="author-image">
-                                                <img src="assets/images/author-3.jpg" alt="author">
-                                        </div>
                                         <div class="author-name media-body">
-                                            <h5 class="name">Mr. Jems Bond</h5>
-                                            <span class="sub-title">CEO Mbuild Firm</span>
+                                            <h5 class="name">Виктория</h5>
+                                            <!-- <span class="sub-title">CEO Mbuild Firm</span> -->
                                         </div>
                                     </div>
                                     <div class="author-review">
@@ -610,7 +604,6 @@
                                             <li><i class="lni lni-star-filled"></i></li>
                                             <li><i class="lni lni-star-filled"></i></li>
                                         </ul>
-                                        <span class="review">( 7 Reviews )</span>
                                     </div>
                                 </div>
                             </div> <!-- single testimonial -->
