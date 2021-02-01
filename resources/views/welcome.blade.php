@@ -136,7 +136,13 @@
                             <div class="col-lg-6">
                                 <div class="slider-content">
                                     <h1 class="title text-center">Почему мы?</h1>
-                                    <p class="text">We blend insights and strategy to create digital products for forward-thinking organisations.</p>
+                                    <p class="text">1. Подарки и бонусы </p>
+                                    <p class="text">2. Учитесь в любое время и в любом месте </p>
+                                    <p class="text">3. Тестирование MBTI - психологическое тестирование на определение типа личности</p>
+                                    <p class="text">4. Сертифицированные (ESL) учителя-носители английского языка </p>
+                                    <p class="text">5. Лекции и уроки готовятся для каждого студента отдельно</p>
+                                    <p class="text">6. Новый метод обучения </p>
+                                    <p class="text">7. Студенты могут сами выбирать своих учителей</p>
                                     <!-- <ul class="slider-btn rounded-buttons">
                                         <li><a class="main-btn rounded-one" href="#">GET STARTED</a></li>
                                         <li><a class="main-btn rounded-two" href="#">DOWNLOAD</a></li>

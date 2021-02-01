@@ -92,7 +92,10 @@ p {
   line-height: 24px;
   color: #121212;
   margin: 0px; }
-
+video {
+    width: 100%;
+    height: auto;
+}
 .bg_cover {
   background-position: center center;
   background-size: cover;
